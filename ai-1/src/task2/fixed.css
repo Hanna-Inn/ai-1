@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Ensure nav is relative for absolute children */
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    z-index: 10; /* Ensure visibility over content */
+  }
+
+  .menu.open {
+    transform: translateY(0);
+  }
+}
